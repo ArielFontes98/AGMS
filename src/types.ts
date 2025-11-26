@@ -11,6 +11,8 @@ export type KpiType = "Primary" | "Secondary";
 
 export type Unit = "percent" | "index" | "count" | "days";
 
+export type TargetDirection = "above" | "below" | "near";
+
 export interface Kpi {
   id: string;
   name: string;
@@ -18,6 +20,7 @@ export interface Kpi {
   type: KpiType;
   function: FunctionKey; // "owner" function
   unit: Unit;
+  targetDirection: TargetDirection; // "above" = higher is better, "below" = lower is better, "near" = closer to target is better
 }
 
 export interface KpiValue {

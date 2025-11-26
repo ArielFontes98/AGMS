@@ -54,6 +54,49 @@
   padding: 0 2rem 2rem;
 }
 
+.bu-view-section {
+  margin-bottom: 2rem;
+}
+
+.bu-view-selector {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.bu-view-selector label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.bu-view-selector select {
+  flex: 1;
+  padding: 0.625rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.bu-view-selector select:hover {
+  border-color: #820AD1;
+}
+
+.bu-view-selector select:focus {
+  outline: none;
+  border-color: #820AD1;
+  box-shadow: 0 0 0 3px rgba(130, 10, 209, 0.1);
+}
+
 @media (max-width: 768px) {
   .app-header {
     padding: 1.5rem;

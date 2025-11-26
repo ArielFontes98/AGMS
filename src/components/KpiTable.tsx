@@ -152,7 +152,21 @@ export const KpiTable = ({ kpis, kpiValues, filters }: KpiTableProps) => {
               tableData.map((row, idx) => {
                 const kpi = kpis.find((k) => k.id === row.kpiId);
                 const unit = kpi?.unit || "count";
-                const isPositive = row.delta >= 0 || (row.kpiId === "TF_P2" && row.delta < 0);
+                
+                // Determine if performance is good based on targetDirection
+                const isPositive = kpi ? (() => {
+                  const { targetDirection } = kpi;
+                  const delta = Math.abs(row.delta);
+                  const tolerance = row.target * 0.05;
+                  
+                  if (targetDirection === "above") {
+                    return row.delta >= 0;
+                  } else if (targetDirection === "below") {
+                    return row.delta <= 0;
+                  } else {
+                    return delta <= tolerance;
+                  }
+                })() : row.delta >= 0;
 
                 return (
                   <tr key={`${row.kpiId}-${row.bu}-${idx}`}>

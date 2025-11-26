@@ -62,29 +62,47 @@ export const KpiSummaryCards = ({
 
   const summaries = getLatestValues();
 
-  const isAboveTarget = (value: number, target: number, kpiId: string): boolean => {
-    // For turnover rate (TF_P2), lower is better
-    if (kpiId === "TF_P2") {
-      return value < target;
+  const isGoodPerformance = (value: number, target: number, kpi: Kpi): boolean => {
+    const { targetDirection } = kpi;
+    const delta = Math.abs(value - target);
+    const tolerance = target * 0.05; // 5% tolerance for "near"
+
+    if (targetDirection === "above") {
+      return value >= target;
+    } else if (targetDirection === "below") {
+      return value <= target;
+    } else {
+      // "near" - within 5% of target
+      return delta <= tolerance;
     }
-    return value >= target;
   };
 
   return (
     <div className="summary-cards-container">
       {summaries.map((summary) => {
-        const aboveTarget = isAboveTarget(summary.latestValue, summary.target, summary.kpi.id);
+        const isGood = isGoodPerformance(summary.latestValue, summary.target, summary.kpi);
         const delta = summary.latestValue - summary.target;
         const deltaPercent = summary.target > 0 ? (delta / summary.target) * 100 : 0;
+        
+        const getStatusBadge = () => {
+          const { targetDirection } = summary.kpi;
+          if (targetDirection === "above") {
+            return isGood ? "✓ On/Above target" : "⚠ Below target";
+          } else if (targetDirection === "below") {
+            return isGood ? "✓ On/Below target" : "⚠ Above target";
+          } else {
+            return isGood ? "✓ On target" : "⚠ Off target";
+          }
+        };
 
         return (
           <div key={summary.kpi.id} className="summary-card">
             <div className="card-header">
               <h3 className="card-title">{summary.kpi.name}</h3>
               <span
-                className={`status-badge ${aboveTarget ? "above-target" : "below-target"}`}
+                className={`status-badge ${isGood ? "above-target" : "below-target"}`}
               >
-                {aboveTarget ? "✓ Above target" : "⚠ Below target"}
+                {getStatusBadge()}
               </span>
             </div>
             <div className="card-content">
@@ -92,7 +110,7 @@ export const KpiSummaryCards = ({
                 <span className="value">{formatValue(summary.latestValue, summary.kpi.unit)}</span>
                 <span className="target">Target: {formatValue(summary.target, summary.kpi.unit)}</span>
               </div>
-              <div className={`delta ${aboveTarget ? "positive" : "negative"}`}>
+              <div className={`delta ${isGood ? "positive" : "negative"}`}>
                 {delta >= 0 ? "+" : ""}
                 {formatValue(delta, summary.kpi.unit)} ({deltaPercent >= 0 ? "+" : ""}
                 {deltaPercent.toFixed(1)}%)

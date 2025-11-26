@@ -1,0 +1,138 @@
+.kpi-by-bu-container {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.kpi-by-bu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.kpi-by-bu-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.kpi-id {
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: #820AD1;
+  background: rgba(130, 10, 209, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #999;
+  font-style: italic;
+}
+
+.kpi-by-bu-table-wrapper {
+  overflow-x: auto;
+}
+
+.kpi-by-bu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.kpi-by-bu-table thead {
+  background: #f9f9f9;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.kpi-by-bu-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.kpi-by-bu-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  color: #666;
+}
+
+.kpi-by-bu-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.bu-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.value-cell {
+  font-weight: 600;
+  color: #820AD1;
+  font-size: 1rem;
+}
+
+.target-cell {
+  color: #666;
+}
+
+.delta-cell {
+  font-weight: 600;
+}
+
+.delta-cell.positive {
+  color: #2e7d32;
+}
+
+.delta-cell.negative {
+  color: #c62828;
+}
+
+.trend-cell {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.trend-cell.trend-up {
+  color: #2e7d32;
+}
+
+.trend-cell.trend-down {
+  color: #c62828;
+}
+
+.trend-cell.trend-stable {
+  color: #666;
+}
+
+.status-badge {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status-badge.above-target {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-badge.below-target {
+  background: #ffebee;
+  color: #c62828;
+}
+

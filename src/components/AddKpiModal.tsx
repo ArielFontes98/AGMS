@@ -77,6 +77,7 @@ export const AddKpiModal = ({
       type: "Primary", // Default to Primary
       function: formData.function as FunctionKey,
       unit: formData.unit as Unit,
+      targetDirection: "above", // Default to above
     };
 
     // Generate dummy values with the target

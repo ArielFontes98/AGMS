@@ -22,6 +22,7 @@ export const kpis: Kpi[] = [
     type: "Primary",
     function: "Cross",
     unit: "percent",
+    targetDirection: "above",
   },
   {
     id: "TF_P2",
@@ -30,6 +31,7 @@ export const kpis: Kpi[] = [
     type: "Primary",
     function: "Cross",
     unit: "percent",
+    targetDirection: "below",
   },
   {
     id: "TF_P3",
@@ -38,6 +40,7 @@ export const kpis: Kpi[] = [
     type: "Primary",
     function: "Cross",
     unit: "percent",
+    targetDirection: "above",
   },
 
   // Talent Flywheel – Secondary
@@ -48,6 +51,7 @@ export const kpis: Kpi[] = [
     type: "Secondary",
     function: "Cross",
     unit: "count",
+    targetDirection: "above",
   },
   {
     id: "TF_S2",
@@ -56,6 +60,7 @@ export const kpis: Kpi[] = [
     type: "Secondary",
     function: "Cross",
     unit: "index",
+    targetDirection: "above",
   },
   {
     id: "TF_S3",
@@ -64,6 +69,7 @@ export const kpis: Kpi[] = [
     type: "Secondary",
     function: "Cross",
     unit: "percent",
+    targetDirection: "above",
   },
   {
     id: "TF_S4",
@@ -72,6 +78,7 @@ export const kpis: Kpi[] = [
     type: "Secondary",
     function: "Cross",
     unit: "count",
+    targetDirection: "above",
   },
   {
     id: "TF_S5",
@@ -80,6 +87,7 @@ export const kpis: Kpi[] = [
     type: "Secondary",
     function: "BA",
     unit: "percent",
+    targetDirection: "above",
   },
   {
     id: "TF_S6",
@@ -88,6 +96,7 @@ export const kpis: Kpi[] = [
     type: "Secondary",
     function: "DS",
     unit: "percent",
+    targetDirection: "below",
   },
   {
     id: "TF_S7",
@@ -96,6 +105,7 @@ export const kpis: Kpi[] = [
     type: "Secondary",
     function: "AE",
     unit: "days",
+    targetDirection: "below",
   },
 
   // AI-First – Primary
@@ -106,6 +116,7 @@ export const kpis: Kpi[] = [
     type: "Primary",
     function: "Cross",
     unit: "percent",
+    targetDirection: "above",
   },
   {
     id: "AI_P2",
@@ -114,6 +125,7 @@ export const kpis: Kpi[] = [
     type: "Primary",
     function: "Cross",
     unit: "count",
+    targetDirection: "above",
   },
   {
     id: "AI_P3",
@@ -122,6 +134,7 @@ export const kpis: Kpi[] = [
     type: "Primary",
     function: "Cross",
     unit: "percent",
+    targetDirection: "above",
   },
 
   // AI-First – Secondary
@@ -132,6 +145,7 @@ export const kpis: Kpi[] = [
     type: "Secondary",
     function: "Cross",
     unit: "count",
+    targetDirection: "above",
   },
   {
     id: "AI_S2",
@@ -140,6 +154,7 @@ export const kpis: Kpi[] = [
     type: "Secondary",
     function: "Cross",
     unit: "percent",
+    targetDirection: "above",
   },
 
   // Tech Excellence – Platform – Primary
@@ -150,6 +165,7 @@ export const kpis: Kpi[] = [
     type: "Primary",
     function: "AE",
     unit: "percent",
+    targetDirection: "above",
   },
 
   // Tech Excellence – Platform – Secondary
@@ -160,6 +176,7 @@ export const kpis: Kpi[] = [
     type: "Secondary",
     function: "AE",
     unit: "percent",
+    targetDirection: "above",
   },
   {
     id: "TE_PLAT_S2",
@@ -168,6 +185,7 @@ export const kpis: Kpi[] = [
     type: "Secondary",
     function: "AE",
     unit: "percent",
+    targetDirection: "above",
   },
 
   // Tech Excellence – Decisions – Primary
@@ -178,6 +196,7 @@ export const kpis: Kpi[] = [
     type: "Primary",
     function: "BA",
     unit: "percent",
+    targetDirection: "above",
   },
   {
     id: "TE_DEC_P2",
@@ -186,6 +205,7 @@ export const kpis: Kpi[] = [
     type: "Primary",
     function: "BA",
     unit: "percent",
+    targetDirection: "above",
   },
 
   // Tech Excellence – Decisions – Secondary
@@ -196,6 +216,7 @@ export const kpis: Kpi[] = [
     type: "Secondary",
     function: "BA",
     unit: "count",
+    targetDirection: "above",
   },
 
   // Tech Excellence – Models – Primary
@@ -206,6 +227,7 @@ export const kpis: Kpi[] = [
     type: "Primary",
     function: "DS",
     unit: "percent",
+    targetDirection: "above",
   },
 
   // Tech Excellence – Models – Secondary
@@ -216,6 +238,7 @@ export const kpis: Kpi[] = [
     type: "Secondary",
     function: "DS",
     unit: "percent",
+    targetDirection: "above",
   },
 ];
 
