@@ -46,6 +46,7 @@ import { KpiSummaryCards } from "./components/KpiSummaryCards";
 import { KpiChart } from "./components/KpiChart";
 import { KpiTable } from "./components/KpiTable";
 import { KpiByBuView } from "./components/KpiByBuView";
+import { KpiByFunctionView } from "./components/KpiByFunctionView";
 import { AddKpiModal } from "./components/AddKpiModal";
 import "./App.css";
 
@@ -60,6 +61,7 @@ function App() {
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedKpiForBuView, setSelectedKpiForBuView] = useState<Kpi | null>(null);
+  const [selectedKpiForFunctionView, setSelectedKpiForFunctionView] = useState<Kpi | null>(null);
 
   // Get available filter options from data
   const availablePillars = useMemo(() => {
@@ -155,9 +157,9 @@ function App() {
 
         <div className="bu-view-section">
           <div className="bu-view-selector">
-            <label htmlFor="kpi-selector">Ver KPI por BU:</label>
+            <label htmlFor="kpi-selector-bu">Ver KPI por BU:</label>
             <select
-              id="kpi-selector"
+              id="kpi-selector-bu"
               value={selectedKpiForBuView?.id || ""}
               onChange={(e) => {
                 const kpi = filteredKpis.find((k) => k.id === e.target.value) || null;
@@ -174,6 +176,32 @@ function App() {
           </div>
           <KpiByBuView
             selectedKpi={selectedKpiForBuView}
+            kpiValues={filteredKpiValues}
+            filters={filters}
+          />
+        </div>
+
+        <div className="bu-view-section">
+          <div className="bu-view-selector">
+            <label htmlFor="kpi-selector-function">Ver KPI por Function:</label>
+            <select
+              id="kpi-selector-function"
+              value={selectedKpiForFunctionView?.id || ""}
+              onChange={(e) => {
+                const kpi = filteredKpis.find((k) => k.id === e.target.value) || null;
+                setSelectedKpiForFunctionView(kpi);
+              }}
+            >
+              <option value="">-- Selecione um KPI --</option>
+              {filteredKpis.map((kpi) => (
+                <option key={kpi.id} value={kpi.id}>
+                  {kpi.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <KpiByFunctionView
+            selectedKpi={selectedKpiForFunctionView}
             kpiValues={filteredKpiValues}
             filters={filters}
           />
