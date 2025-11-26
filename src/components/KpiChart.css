@@ -1,0 +1,63 @@
+.chart-container {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.chart-header {
+  margin-bottom: 1.5rem;
+}
+
+.chart-controls {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 200px;
+}
+
+.control-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.control-group select {
+  padding: 0.625rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.control-group select:hover {
+  border-color: #820AD1;
+}
+
+.control-group select:focus {
+  outline: none;
+  border-color: #820AD1;
+  box-shadow: 0 0 0 3px rgba(130, 10, 209, 0.1);
+}
+
+.chart-content {
+  width: 100%;
+}
+
+.chart-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #999;
+  font-size: 1rem;
+}
+

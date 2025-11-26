@@ -1,0 +1,105 @@
+.summary-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-badge.above-target {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-badge.below-target {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.card-content {
+  margin-bottom: 1rem;
+}
+
+.value-display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #820AD1;
+}
+
+.target {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.delta {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.delta.positive {
+  color: #2e7d32;
+}
+
+.delta.negative {
+  color: #c62828;
+}
+
+.card-footer {
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.pillar-tag {
+  font-size: 0.75rem;
+  color: #820AD1;
+  font-weight: 600;
+  background: rgba(130, 10, 209, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  display: inline-block;
+}
+
